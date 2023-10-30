@@ -1,22 +1,23 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import SubcriteriaItem from "./subcriteriaItem";
 import "../../assets/css/wantsView.css";
 import arrow_down from "../../assets/images/expand_less_dark.svg"
 
 
 
-const CriteriaAccordion = ({criteria_data}) =>{
- console.log(criteria_data);
+const CriteriaAccordion = ({criteria_data,collapsed_all}) =>{
 
+ const [collapsed,setCollapsed] = useState(collapsed_all);
  let city_scores = Object.keys(criteria_data.total_city_score);
  let subcriteria = Object.keys(criteria_data.subcriteria);
- const [collapsed,setCollapsed] = useState(null);
+   
 
     const toggle = (value) =>{
         if(collapsed === value){
-            return setCollapsed(null);
-        }
+            return setCollapsed("");
+        }else{
         setCollapsed(value);
+        }
     }
 
  
@@ -32,7 +33,7 @@ const CriteriaAccordion = ({criteria_data}) =>{
         <img class={`arrow-icon ${collapsed === "show" ? "rotate":""}`} src={arrow_down}/>
         </div>
             {subcriteria.map((key)=>(
-                <SubcriteriaItem key={key} subcriteria_data={criteria_data.subcriteria[key]} collapsed={collapsed}/>
+                <SubcriteriaItem key={key} subcriteria_data={criteria_data.subcriteria[key]} collapsed={collapsed} collapse_all={collapsed_all}/>
             ))}
     </div>
     );

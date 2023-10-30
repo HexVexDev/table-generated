@@ -1,8 +1,9 @@
-
+import { useState,useEffect } from "react";
  import "../../assets/css/wantsView.css";
  import CriteriaAccordion from "./criteriaAccordion";
  import open_all from "../../assets/images/expand_all.svg";
  import close_all from "../../assets/images/collapse_all.svg";
+
 const WantsView = () =>{
     const report = {
         criteria:{
@@ -49,18 +50,28 @@ const WantsView = () =>{
 			city3: "Monterrey"
 		}
     }
-
+	const [collapsed_all,setCollapsed_all] = useState(0);
 	let city_names = Object.keys(report.cityNames);
 	let criteria = Object.keys(report.criteria);
-	console.log(city_names);
+
+
+	const toggleAll = (action) =>{
+		if (action === "show") {
+			setCollapsed_all(1);
+		  } else {
+			setCollapsed_all(0); // Clear the collapsed state
+		  }
+	};
+
+
 	return(
 		<div class="wants-wrapper"> 
 			<div class="title-wrapper">
 				<div class="big-column">
 					<div>Criteria</div>
-					<img src={open_all} width="24px" height="24px"/>
+					<img src={open_all} width="24px" height="24px" onClick={()=>toggleAll("show")}/>
 					<h5>Expand all</h5>
-					<img src={close_all} width="24px" height="24px"/>
+					<img src={close_all} width="24px" height="24px" onClick={()=>toggleAll("")}/>
 					<h5>Close all</h5>
 				</div>
 				<div class="small-column">
@@ -76,7 +87,7 @@ const WantsView = () =>{
 			<div class="criteria-wrapper">
 				
 				{criteria.map((key)=>(
-					<CriteriaAccordion key={key} criteria_data={report.criteria[key]} />	
+					<CriteriaAccordion key={key} criteria_data={report.criteria[key]}  collapsed_all={collapsed_all}/>	
 				))}
 				
 					

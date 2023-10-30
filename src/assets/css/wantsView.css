@@ -1,0 +1,113 @@
+.wants-wrapper{
+    background:  #F5F6F7;
+    position:           fixed;
+    width:              100%;
+    height:             100%;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.wants-wrapper .title-wrapper{
+    position:           absolute;
+    top:                15%;
+    display:            flex;
+    width:              82.6%;
+    height:             55px;
+    border: 1px solid #000;
+}
+
+.wants-wrapper .big-column{
+    width:             36.1%;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.wants-wrapper .title-wrapper .big-column{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    line-height: 55px;
+}
+.wants-wrapper .small-column{
+    width:              10.92%;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 55px;
+}
+
+.wants-wrapper .criteria-wrapper{
+    border: 1px solid #000;
+    position: absolute;
+    top: 25% ;
+    width:82.6%;
+    display: flex;
+    height: 100%;
+}
+
+.wants-wrapper .accordion{
+    width:100%;
+}
+
+.wants-wrapper .criteria-wrapper .accordion-item{
+    height:80px;
+    width: 100%;
+}
+
+.wants-wrapper .criteria-wrapper .accordion-item .accordion-head{
+    height:80px;
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+    line-height: 80px;
+    background: #FFF;
+
+box-shadow: 0px 4px 30px 0px rgba(35, 107, 216, 0.05);
+}
+
+.wants-wrapper .criteria-wrapper .accordion-item .accordion-head .big-column{
+    height:80px;
+    line-height: 80px;
+    
+}
+
+.wants-wrapper .criteria-wrapper .accordion-item .accordion-head .small-column{
+    height:80px;
+    line-height: 80px;
+   
+}
+
+
+.wants-wrapper .criteria-wrapper .accordion-item .accordion-body{
+    border: 1px solid rgba(7, 27, 57, 0.05);
+    height:70px;
+    max-height:0;
+    overflow:hidden;
+    transition: overflow 0.5s;
+    line-height: 70px;
+    
+}
+
+.wants-wrapper .criteria-wrapper .accordion-item .accordion-body.show{
+    height:auto;
+    max-height:1000px;
+    height: 70px;
+    display: flex;
+    
+ 
+}
+
+
+.wants-wrapper .info-icon{
+    position:relative;
+}
+
+.wants-wrapper .arrow-icon {  
+    transition: transform 0.3s;
+    margin-left: 50px;
+}
+
+.wants-wrapper .rotate {
+    transform: rotate(180deg);
+}
+
+

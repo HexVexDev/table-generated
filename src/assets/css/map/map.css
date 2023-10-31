@@ -1,0 +1,148 @@
+/* CSS for marker */
+.marker-popup {
+  min-height:               100px;
+  min-width:                80px;
+  display:                  flex;
+  align-items:              end;
+  justify-content:          center;
+}
+
+.marker {
+  cursor:                    pointer;
+  transition:                height 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+/* css of popup for marker */
+.popup {
+  position:                   absolute;
+  top:                        -200px;
+  left:                       100px;
+  visibility:                 hidden;
+  opacity:                    0;
+  background:                 white;
+  width:                      fit-content;
+  padding:                    0;
+  height:                     0px;
+  overflow-y:                 hidden;
+  transition:                 height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.popup.open {
+  visibility:                 visible;
+  opacity:                    1;
+  height:                     fit-content;
+  /* transition:                 height 0.5s ease-in-out, opacity 0.5s ease-in-out; */
+}
+
+.popup .custom-popup .close-popup > img {
+  position:                   absolute;
+  cursor:                     pointer;
+  top:                        0px;
+  right:                      0px;
+  padding:                    10px;
+}
+
+.popup .custom-popup .img {
+  width:                      100%;
+  height:                     auto;
+}
+
+.popup .custom-popup .header {
+  display:                    flex;
+  flex-direction:             column;
+  padding:                    20px 60px 20px 40px;
+  background:                 var(--darkBlue);
+}
+
+.popup .custom-popup .header > h4, 
+.popup .custom-popup .header > p {
+  color:                      white;
+}
+
+.popup .custom-popup .header >  p {
+  opacity:                    0.5;
+}
+
+.popup .custom-popup .infoContainer {
+  display:                    flex;
+  width:                      100%;
+  flex-direction:             row;
+  flex-wrap:                  wrap;
+  padding:                    33px 40px;
+  gap:                        30px;
+}
+
+.popup .custom-popup .infoContainer .info {
+  width:                      calc(50% - 15px);
+}
+
+.popup .custom-popup .infoContainer .info > h4, 
+.popup .custom-popup .infoContainer .info > p {
+  color:                      black;
+}
+
+.popup .custom-popup .infoContainer .info >  p {
+  opacity:                    0.5;
+}
+
+.popup .custom-popup .infoContainer .info >  a {
+  margin:                     6px 0;
+  background: 				        var(--gradient);
+	background-clip: 				    text;
+	-webkit-background-clip: 	  text;
+	-webkit-text-fill-color: 	  transparent;
+}
+
+.popup .custom-popup .btnContainer {
+  display:                    flex;
+  flex-direction:             row;
+  padding:                    20px 25px;
+  align-items:                center;
+  gap:                        10px;
+}
+
+.popup .custom-popup .btnContainer .button {
+  display:                    inline-flex;
+  justify-content:            center;
+  align-items:                center;
+  white-space:                nowrap;
+  background:                 var(--blue);
+  padding:                    6px 10px;
+  border:                     unset;
+  gap:                        5px;
+}
+
+.popup .custom-popup .btnContainer .primary {
+  min-width:                  calc(40% - 5px);
+}
+
+.popup .custom-popup .btnContainer .secondary {
+  min-width:                  calc(60% - 5px);
+}
+
+.popup .custom-popup .btnContainer .button:hover {
+  background-color:           var(--darkBlue);
+}
+
+.popup .custom-popup .btnContainer .button > span {
+  font-weight:                400;
+  background:                 var(--gradient);
+  background-clip:            text;
+  -webkit-background-clip:    text;
+  -webkit-text-fill-color:    transparent;
+}
+
+.popup .custom-popup .btnContainer .button > span:hover {
+  background:                 var(--gradient);
+  background-clip:            text;
+  -webkit-background-clip:    text;
+  -webkit-text-fill-color:    transparent;
+}
+
+.mapboxgl-popup-close-button {
+  color:                      white;
+  -webkit-text-fill-color:    white;
+  background:                 none;
+  font-size:                  24px;
+  margin:                     10px 10px 0 0;
+}

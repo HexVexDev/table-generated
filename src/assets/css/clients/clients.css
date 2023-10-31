@@ -1,0 +1,437 @@
+.containerClientReport {
+	position:                       	    absolute;
+	bottom:                          		  0;
+	left:                            		  0;
+	right:                            	 	0;
+	height:                           	 	0;
+	z-index:                          	 	999;
+	border-radius:                    	 	35px 35px 0 0;
+	background:                       	 	var(--grey);
+	box-shadow:                       	 	0 -50px 60px 0 rgba(7, 27, 57, 0.20);
+	overflow-y:                       	 	auto;
+	visibility:                       	 	hidden;
+	opacity:                          	 	0;
+	padding:                           	 	110px 0;
+}
+
+.containerClientReport.opened {
+	visibility:                       	 	visible;
+	opacity:                          	  1;
+}
+
+.containerClientReport .containerMinimizeClose {
+	display:                          	  flex;
+	position:                         		absolute;
+	top:                              		30px;
+	right:                           	 	  30px;
+	gap:                             		  30px;
+}
+
+.containerClientReport .containerMinimizeClose > img {
+	width:                              	14px;
+	height:                             	auto;
+	object-fit:                         	contain;
+	object-position:                    	center center;
+	cursor:                             	pointer;
+}
+
+.containerClientReport .container .editClientsHeader {
+	margin: 								              10px 0;
+}
+
+.containerClientReport .container .containerHeader {
+	display:                            	flex;
+  justify-content:                      space-between;
+  padding-left:                         100px;
+	margin-top: 							            57px;
+	margin-bottom: 							          57px;
+}
+
+.containerClientReport .container .containerHeader .clientLogTitle {
+	width:                              	490px;
+  height:                             	125px;
+}
+
+.containerClientReport .container .containerHeader .searchContainer{
+	position: 						            		relative;
+	width: 								              	fit-content;
+	margin: 							            	  0 0 95px auto;
+}
+
+.containerClientReport .container .containerHeader .searchContainer::after{
+	content: 								"";
+	display: 								block;
+	width: 									25px;
+	height: 								25px;
+	background: 							url("../../images/search.svg") center center no-repeat;
+	background-size: 						25px;
+	position: 								absolute;
+	top: 									0;
+	bottom: 								0;
+	right: 									25px;
+	margin:  								auto 0;
+	cursor: 								pointer;
+}
+
+.containerClientReport .container .containerHeader .searchContainer .search{
+	width: 									272px;
+	padding-right: 							65px;
+}
+
+.clientDirectory {
+	display: 								flex;
+	flex-direction: 						column;
+	gap: 									30px;
+}
+
+.clientDirectory .filtersContainer {
+  display:                           		flex;
+  justify-content:                   		space-between;
+  width: 									100%;
+}
+
+.clientDirectory .filtersContainer .pagesFilterContainer .itemsPerPageFilter {
+	position: 								relative;
+	display: 								flex;
+	flex-direction: 						row;
+	background: 							#FFFFFF;
+	padding: 								6px 5px 6px 15px;
+	cursor: 								pointer;
+}
+
+.clientDirectory .filtersContainer .pagesFilterContainer .itemsPerPageFilter > span {
+	margin-right: 							10px;
+	margin-left: 							5px;
+}
+
+.clientDirectory .filtersContainer .pagesFilterContainer .itemsPerPageFilter.active {
+	background: 							var(--gradient), var(--blue);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+}
+
+.clientDirectory .pagesFilterContainer .itemsPerPageFilter .filterOptions {
+	background: 							rgba(255, 255, 255, 0.90);
+	box-shadow: 							0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 								absolute;
+	width: 									100%;
+	top: 									120%;
+	right:									0;
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+	max-height: 							0;
+	overflow: 								hidden;
+}
+
+.clientDirectory .pagesFilterContainer .itemsPerPageFilter .filterOptions.show {
+	visibility: 							visible;
+	opacity: 								1;
+	max-height: 							1000px;
+}
+
+.clientDirectory .pagesFilterContainer .itemsPerPageFilter .filterOptions .option {
+	padding: 								10px 35px;
+	cursor: 								pointer;
+	-webkit-text-fill-color: 				black;
+}
+
+.clientDirectory .pagesFilterContainer .itemsPerPageFilter .filterOptions .option:hover {
+	background: 							var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+}
+
+/* CSS for the alphabet filter */
+
+.clientDirectory .alphabetContainer {
+  display:                            flex;
+  flex-direction:                     row;
+  gap:                                3px;
+}
+
+.clientDirectory .alphabetContainer .buttonLetter {
+  border:                             none;
+  text-decoration:                    none;
+  background:                         transparent;
+  width:                              25px;
+  height:                             auto;
+}
+
+
+
+.clientDirectory .clientsCardsSection {
+  display:                            flex;
+  flex-direction:                     row;
+  gap:                                35px;
+  flex-wrap:                          wrap;
+  width:                              100%;
+}
+
+.clientDirectory .clientsCardsSection .clientCard {
+  display:                            flex;
+  position:                           relative;
+  flex-direction:                     column;
+  background:                         white;
+  padding:                            50px 50px 60px 50px;
+  width:                              calc(50% - 17.5px);
+  height:                             auto;
+  flex-shrink:                        0;
+  gap:                                20px;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .noteModal {
+  top:                                calc(50% - 122px);
+  right:                              calc(50% - 295px);
+  width:                              590px;
+  min-height:                         244px;
+  background:                         white;
+  box-shadow:                         30px 30px 100px 0px rgba(4, 26, 57, 0.20);
+  z-index:                            99999;
+  position:                           fixed;
+  opacity:                            0;
+  visibility:                         hidden;
+  transition:                         all 0.3s ease-in-out;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .noteModal .modalInfo {
+  position:                           relative;
+  display:                            flex;
+  gap:                                20px;
+  flex-direction:                     column;
+  padding:                            40px 67px 78px 67px;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .noteModal.show {
+  opacity:                            1;
+  visibility:                         visible;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .noteModal .modalInfo > p{
+  padding:                            20px;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .noteModal .modalInfo > img{
+  position:                           absolute;
+  height:                             14px;
+  width:                              14px;
+  top:                                9px;
+  right:                              10px;
+  cursor:                             pointer;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .cardOptions {
+  position:                           absolute;
+  right: 							              	10px;
+  top: 								                5px;
+  z-index: 						              	998;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .cardOptions > img {
+	width: 								              25px;
+	height: 							              25px;
+	object-fit: 						            contain;
+	object-position: 			              center center;
+	cursor: 							              pointer;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient {
+	background: 					            	rgba(255, 255, 255, 0.90);
+	box-shadow: 					            	0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 						             	absolute;
+	right: 							              	-75px;
+	top: 								                25px;
+	z-index: 						              	999;
+	visibility: 				             		hidden;
+	opacity: 						              	0;
+	transition: 				             		all 0.3s ease-in-out;
+	max-height: 				             		0;
+	overflow: 						             	hidden;
+  width:                              180px;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient.show {
+	visibility: 						            visible;
+	opacity: 						               	1;
+	max-height: 				               	1000px;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient .option {
+	padding: 					               		10px 35px;
+	cursor: 					               		pointer;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient .option:hover {
+	background: 				               	var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 				           	text, padding-box;
+	-webkit-background-clip: 		      	text, padding-box;
+	-webkit-text-fill-color: 			      transparent;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient .option:last-of-type {
+	color: 							               	var(--red);
+}
+
+.clientDirectory .clientsCardsSection .clientCard .moreOptionsClient .option:last-of-type:hover {
+	background: 				               	rgba(4, 26, 57, 0.10);
+	background-clip: 				           	padding-box;
+	-webkit-background-clip: 		       	padding-box;
+	-webkit-text-fill-color: 		       	var(--red);
+}
+
+.clientDirectory .clientsCardsSection .clientCard .logo {
+  display:                            flex;
+  justify-content:                    center;
+  align-items:                        center;
+  border-radius:                      50%;
+  background: 						            var(--gradient);
+  width:                              80px;
+  height:                             80px;
+  box-shadow:                         15px 15px 30px 0 rgba(35, 107, 216, 0.25);
+}
+  
+.clientDirectory .clientsCardsSection .clientCard .logo > span{
+  color:                              white;
+  height:                             48px;
+  width:                              23px;
+  font-size:                          32px;
+  text-align:                         center;
+}
+  
+.clientDirectory .clientsCardsSection .clientCard .logo > img{
+  object-fit: 					              cover;
+  object-position: 				            center center;
+  width:                              80px;
+  height:                             80px;
+  border-radius:                      50%;
+  border:                             5px solid transparent;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .clientInfo {
+  display:                            flex;
+  flex-direction:                     row;
+  flex-wrap:                          wrap;
+  gap:                                10px;
+  width:                              100%;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .clientInfo .info {
+  width:                              calc(50% - 5px);
+  height:                             70px;
+}
+
+
+.clientDirectory .clientsCardsSection .clientCard .clientInfo .info > h4 {
+  width:                              fit-content;
+  font-size:                          20px;
+  font-weight:                        400;
+}
+
+.clientDirectory .clientsCardsSection .clientCard .clientInfo .info > span {
+  font-size:                          12px;
+  opacity:                            0.5;
+}
+
+/* editClients CSS */
+
+.editClientSection .containerActions {
+  display:                            flex;
+  justify-content:                    end;
+  gap:                                10px;
+}
+
+.editClientSection .containerActions .cancelButton {
+  padding:                            10px 50px;
+  justify-content:                    center;
+  align-items:                        center;
+  border:                             unset;
+  background:                         transparent;
+}
+
+.editClientSection .containerActions .secondaryButton {
+  padding:                            10px 50px;
+  justify-content:                    center;
+  align-items:                        center;
+  margin-left:                        unset;
+}
+
+.editClientSection .containerActions .secondaryButton:disabled {
+  background:                         rgba(0, 0, 0, 0.05);
+}
+
+.editClientSection .containerActions .secondaryButton:disabled > span {
+  background:                         rgba(0, 0, 0, 0.40);
+  background-clip:                    text;
+  -webkit-background-clip:            text;
+  -webkit-text-fill-color:            transparent;
+}
+
+.editClientSection .containerActions .secondaryButton {
+  display:                            inline-flex;
+  background:                         var(--blue);
+  padding:                            10px 10px;
+  border:                             unset;
+  gap:                                5px;
+  align-items:                        center;
+}
+
+.editClientSection .containerActions .secondaryButton > span {
+  font-weight:                        400;
+  background:                         var(--gradient);
+  background-clip:                    text;
+  -webkit-background-clip:            text;
+  -webkit-text-fill-color:            transparent;
+}
+
+.editClientSection .containerActions .secondaryButton:hover {
+  background-color:                   var(--darkBlue);
+}
+
+.editClientSection .containerActions .secondaryButton > span:hover {
+  background:                         var(--gradient);
+  background-clip:                    text;
+  -webkit-background-clip:            text;
+  -webkit-text-fill-color:            transparent;
+}
+
+.editClientSection .containerActions .secondaryButton {
+  padding:                            10px 50px;
+  justify-content:                    center;
+  align-items:                        center;
+  margin-left:                        unset;
+}
+
+.editClientSection .containerActions .secondaryButton:disabled {
+  background:                         rgba(0, 0, 0, 0.05);
+}
+
+.editClientSection .containerActions .secondaryButton:disabled > span {
+  background:                         rgba(0, 0, 0, 0.40);
+  background-clip:                    text;
+  -webkit-background-clip:            text;
+  -webkit-text-fill-color:            transparent;
+}
+
+.editClientSection .inputContainer > textarea{
+	width: 								              100%;
+	border: 							              unset;
+	background-color: 				        	#FFFFFF;
+	padding: 							              15px 20px;
+	font-size: 						            	14px;
+	position: 						            	relative;
+	border-bottom: 				          		1px solid transparent;
+	transition: 					            	all 0.3s ease-in-out;
+}
+
+.editClientSection .inputContainer > textarea::placeholder{
+	opacity: 						               	0.4;
+}
+
+.editClientSection .inputContainer > textarea:focus{
+	outline: 						              	unset;
+	border-bottom: 				           		1px solid #009AFF;
+}
+

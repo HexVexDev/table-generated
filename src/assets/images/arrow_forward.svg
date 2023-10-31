@@ -1,14 +1,14 @@
-<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="arrow_forward">
-<mask id="mask0_253_7425" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="15">
-<rect id="Bounding box" width="15" height="15" fill="#D9D9D9"/>
+<mask id="mask0_254_10099" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+<rect id="Bounding box" width="20" height="20" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask0_253_7425)">
-<path id="arrow_forward_2" d="M10.1091 8.125H2.49976V6.875H10.1091L6.60913 3.375L7.49976 2.5L12.4998 7.5L7.49976 12.5L6.60913 11.625L10.1091 8.125Z" fill="url(#paint0_linear_253_7425)"/>
+<g mask="url(#mask0_254_10099)">
+<path id="arrow_forward_2" d="M13.4793 10.834H3.3335V9.16732H13.4793L8.81266 4.50065L10.0002 3.33398L16.6668 10.0007L10.0002 16.6673L8.81266 15.5007L13.4793 10.834Z" fill="url(#paint0_linear_254_10099)"/>
 </g>
 </g>
 <defs>
-<linearGradient id="paint0_linear_253_7425" x1="7.49976" y1="2.5" x2="7.49976" y2="12.5" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_254_10099" x1="10.0002" y1="3.33398" x2="10.0002" y2="16.6673" gradientUnits="userSpaceOnUse">
 <stop offset="0.197917" stop-color="#009AFF"/>
 <stop offset="1" stop-color="#8CA5FF"/>
 </linearGradient>

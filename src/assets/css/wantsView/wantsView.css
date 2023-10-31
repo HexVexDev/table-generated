@@ -1,0 +1,291 @@
+.wants-view{
+    padding:                    160px 0 50px;
+}
+
+.wants-view .header-section{
+    display:                    flex;
+    align-items:                center;
+    margin-bottom:              25px;
+    padding:                    0 50px;
+}
+
+.wants-view .header-section .criterion-wrapper{
+    display:                    flex;
+    gap:                        20px;
+    flex:                       0 0 40%;
+}
+
+.wants-view .header-section .criterion-wrapper > span{
+    font-weight:                700;
+}
+
+.wants-view .header-section .criterion-wrapper > button{
+    background:                 unset;
+    border:                     unset;
+    font-size:                  14px;
+    padding:                    0;
+    display:                    flex;
+    align-items:                center;
+}
+
+.wants-view .header-section .criterion-wrapper > button:first-of-type::before{
+    content:                     "";
+    width:                       25px;
+    height:                      25px;
+    background:                  url("../../images/expand_all.svg") center center no-repeat;
+    background-size:             25px 25px;
+    margin-right:                5px;
+}
+
+.wants-view .header-section .criterion-wrapper > button:last-of-type::before{
+    content:                     "";
+    width:                       25px;
+    height:                      25px;
+    background:                  url("../../images/collapse_all.svg") center center no-repeat;
+    background-size:             25px 25px;
+    margin-right:                5px;
+}
+
+.wants-view .header-section .btn-header{
+    background:                 unset;
+    border:                     unset;
+    font-weight:                700;
+    text-align:                 center;
+    flex:                       1 0 0;
+    padding:                    0;
+}
+.wants-view .accordion-item{
+    border:                     unset;
+}
+.wants-view .accordion-header{
+    border-radius:              0;
+    background:                #FFF;
+    box-shadow:                 0px 4px 30px 0px rgba(35, 107, 216, 0.05);
+}
+
+.wants-view .accordion-header .accordion-button{
+    padding:                    30px 50px;
+    display:                    flex;
+    align-items:                center;
+    position:                   relative;
+}
+
+.wants-view .accordion-header .accordion-button::after{
+    position:                   absolute;
+    right:                      30px;
+}
+
+.wants-view .accordion-header .accordion-button:focus{
+    box-shadow:                 unset;
+}
+
+.wants-view .accordion-header .accordion-button:not(.collapsed){
+    background-color:        #FFF;
+}
+
+.wants-view .accordion-header .accordion-button .button-title{
+    color:                     var(--darkBlue);
+    font-weight:               700;
+    opacity:                   0.6;
+    flex:                      0 0 40%;
+}
+
+.wants-view .accordion-header .accordion-button .points-weight{
+    color:                     var(--darkBlue);
+    text-align:                center;
+    font-weight:               700;
+    opacity:                   0.6;
+    flex:                      1 0 0;
+}
+
+.wants-view .accordion-header .accordion-button .city-score-highlight{
+    color:                     var(--darkBlue);
+    text-align:                center;
+    font-weight:               900;
+    flex:                      1 0 0;
+}
+
+.wants-view .accordion-body{
+    border:                    1px solid rgba(7, 27, 57, 0.05);
+    padding:                   20px 45px 0;
+    padding-right:             0; 
+    background: var(--bg_grey, #F5F6F7);
+}
+
+.wants-view .accordion-body .subcriteria-row{
+    display:                   flex;
+    margin-bottom:             25px;
+    align-items:               center;
+    flex: 1 0 0;
+}
+
+
+.wants-view .accordion-body .subcriteria-row .criteria-description{
+    display:                   flex;
+    gap:                       10px;
+    flex:                      0 0 39%;
+    position:                  relative;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-description > button{
+    background:                 unset;
+    border:                     unset;
+    font-size:                  14px;
+    padding:                    0;
+    display:                    flex;
+    align-items:                center;
+}
+
+
+.wants-view .accordion-body .subcriteria-row .criteria-description > button:first-of-type{
+    content:                     "";
+    width:                       25px;
+    height:                      25px;
+    background:                  url("../../images/info-blue.svg") center center no-repeat;
+    background-size:             25px 25px;
+    opacity:                     0.6;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-description > h5 {
+    font-weight:                 700;
+    line-height:                 normal;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-description > button:last-of-type{
+    padding:                    3px 15px;
+    justify-content:            center;
+    align-items:                center;
+    gap:                        10px;
+    background:         #0000000D 5%;
+    width:                      85px;
+    height:                     30px;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-row-data{
+    display:                    flex;
+    align-items:                center;
+    flex:                       1 0 0;
+    justify-content:            center;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-row-data{
+
+    text-align:                 center;
+    font-weight:                400;
+    opacity:                    0.6;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-row-data > h5:nth-of-type(4){
+    flex:                       0 0 18%;
+    padding-left:               20px;
+    text-align:                 center;
+}
+
+.wants-view .accordion-body .subcriteria-row .criteria-row-data > h5:nth-of-type(5){
+    flex:                       0 0 18%;
+    padding-left:               30px;
+    text-align:                 center;
+}
+
+.wants-view .accordion-body .details-button{
+  flex:                         0 0 5%;
+  border:                       unset;
+  display:                      inline-flex;
+    padding:                    4px 6px;
+    align-items:                center;
+    height:                     20px;
+    width:                      60px;
+    background:                  #009AFF 19.79%;
+    font-size:                  10px;
+    font-weight:                400;
+    background: var(--gradient, linear-gradient(180deg, #009AFF 19.79%, #8CA5FF 100%));
+    background-clip:            text;
+    -webkit-background-clip:    text;
+    -webkit-text-fill-color:    transparent;
+}
+
+.wants-view .accordion-body .details-button::after{
+    content:                     "";
+    width:                       15px;
+    height:                      15px;
+    background:                  url("../../images/arrow_forward.svg") center center no-repeat;
+    background-size:             15px 15px;
+    margin-left:                 2px;
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip{
+    position: absolute;
+    visibility: hidden;
+    
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip.show{
+    display:                    flex;
+    flex-direction:             column;
+    z-index:                    100;
+    background-color:          rgba(255,255,255); /* Background color for the tooltip */
+    color:                     black; /* Text color for the tooltip */
+    padding:                    5px 10px;
+    border-radius:              4px;
+    box-shadow:                 0 2px 4px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    top:30px;
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip.show > h5{
+    font-weight:                700;
+
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip.show .tooltip-title{
+    font-weight:                700;
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip.show .text-column{
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.wants-view .accordion-body .criteria-description .info-tooltip.show > div{
+    display:                    flex;
+    
+}
+
+.wants-view .accordion-body .criteria-description .criteria-tooltip{
+    position: absolute;
+    visibility: hidden;
+    
+}
+
+.wants-view .accordion-body .criteria-description .criteria-tooltip.show{
+    display:                    flex;
+    flex-direction:             column;
+    z-index:                    100;
+    background-color:          rgba(255,255,255); /* Background color for the tooltip */
+    color:                     black; /* Text color for the tooltip */
+    padding:                    5px 10px;
+    border-radius:              4px;
+    box-shadow:                 0 2px 4px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    top:40px;
+    left:180px;
+}
+
+.wants-view .accordion-body .criteria-description .criteria-tooltip.show > h5{
+    font-weight:                700;
+}
+
+.wants-view .accordion-body .criteria-description .criteria-tooltip.show .criteria-tooltip-row{
+    list-style-type:            none;
+    display:                    flex;
+    justify-content:            space-between;
+    border-bottom:              1px solid rgba(7, 27, 57, 0.05);
+    height:                     40px;
+    align-items:                center;
+}
+
+
+
+
+
+

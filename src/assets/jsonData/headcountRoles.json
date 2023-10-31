@@ -1,0 +1,17 @@
+{
+  "direct": [
+    "Material preparer",
+    "Assembler",
+    "Palletizing worker"
+  ],
+  "indirects": [
+    "Warehouse keeper",
+    "Production team leader",
+    "Production manager",
+    "Production supervisor"
+  ],
+  "corporates": [
+    "XPats",
+    "Supports startup staff"
+  ]
+}

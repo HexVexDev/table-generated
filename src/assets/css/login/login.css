@@ -1,0 +1,216 @@
+/* LOGIN */
+.login {
+	min-height: 						100vh;
+	position: 							relative;
+}
+
+.login .world{
+	height: 							100%;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+}
+
+.login .row{
+	height: 							100vh;
+	align-items: 						center;
+}
+
+.login .logo{
+	height: 							90px;
+	object-fit: 						contain;
+	object-position: 					center center;
+	margin-bottom: 						10px;
+}
+
+.login .username, .login .password{
+	font-weight: 						500;
+	margin-bottom: 						10px;
+}
+
+.login .rememberContainer{
+	display: 							flex;
+	flex-flow: 							row nowrap;
+	gap: 								10px;
+	align-items: 						center;
+	margin-bottom: 						30px;
+}
+
+.login .rememberContainer > label{
+	cursor: 							pointer;
+}
+
+.login .loginSubmit, .login .loginDisable{
+	display: 							block;
+	background: 						var(--blue);
+	padding: 							10px 65px;
+	border:  							unset;
+	margin-left: 						auto;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.login .loginSubmit:hover{
+	background-color: 					var(--darkBlue);
+}
+
+.login .loginSubmit > span{
+	font-weight: 						700;
+	background: 						var(--gradient);
+	background-clip: 					text;
+	-webkit-background-clip: 			text;
+	-webkit-text-fill-color: 			transparent;
+}
+
+.login .loginDisable{
+	background: 						rgba(7, 27, 57, 0.05);
+}
+
+.login .loginDisable > span{
+	font-weight: 						700;
+}
+
+.login .privacy{
+	font-size: 							12px;
+	font-weight: 						400;
+	opacity: 							0.4;
+	cursor: 							pointer;
+	position: 							absolute;
+	right: 								40px;
+	bottom: 							20px;
+}
+
+.login .privacy:hover{
+	opacity: 							1;
+}
+
+.login .animationContainer{
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	right: 								0;
+	bottom: 							0;
+	z-index: 							999;
+	visibility: 						hidden;
+	opacity: 							0;
+}
+
+.login .animationContainer.show{
+	animation: 							animatedContainer 0.5s forwards;
+	/* , animatedContainerReverse 0.5s forwards 2s */
+}
+
+.login .animationContainer .columnAnimation{
+	width: 								0%;
+	height: 							100%;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	background-color: 					#041A39;
+}
+
+.login .animationContainer .columnAnimation:nth-of-type(2){
+	left: 								25%;
+}
+
+.login .animationContainer .columnAnimation:nth-of-type(3){
+	left: 								50%;
+}
+
+.login .animationContainer .columnAnimation:nth-of-type(4){
+	left: 								75%;
+}
+
+.login .animationContainer .columnAnimation.animate{
+	animation: 							animatedWidth 0.5s forwards;
+	/* , animatedWidthReverse 0.5s forwards 2s */
+}
+
+.login .animationContainer .title{
+	width: 								fit-content;
+	height: 							fit-content;
+	color: 								#00A3FF;
+	font-size:							48px;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	right: 								0;
+	bottom: 							0;
+	margin: 							auto;
+	max-height: 						0;
+	overflow: 							hidden;
+}
+
+.login .animationContainer .title::after{
+	content: 							"Teresa";
+	display: 							inline-block;
+	max-width: 							0;
+	color: 								#FFFFFF;
+	font-size: 							48px;
+}
+
+/* .login .animationContainer .title.animate{
+	animation: 							animatedHeight 3s forwards 0.5s;
+}
+
+.login .animationContainer .title.animate::after{
+	animation: 							animatedTitleAfter 3s forwards 1s;
+	margin-left: 						10px;
+} */
+
+@keyframes animatedContainer {
+	0%{
+		visibility: 					hidden;
+		opacity: 						0;
+	}
+	100%{
+		visibility: 					visible;
+		opacity: 						1;
+	}
+}
+
+/* @keyframes animatedContainerReverse {
+	0%{
+		visibility: 					visible;
+		opacity: 						1;
+	}
+	100%{
+		visibility: 					hidden;
+		opacity: 						0;
+	}
+} */
+
+@keyframes animatedWidth {
+	0%{
+		width: 							0%;
+	}
+	100%{
+		width: 							25%;
+	}
+}
+
+/* @keyframes animatedWidthReverse {
+	0%{
+		width: 							25%;
+	}
+	100%{
+		width: 							0%;
+	}
+}
+
+@keyframes animatedHeight {
+	0%{
+		max-height: 					0;
+	}
+	100%{
+		max-height: 					1000px;
+	}
+}
+
+@keyframes animatedTitleAfter {
+	0%{
+		max-width: 						0;
+	}
+	100%{
+		max-width: 						1000px;
+	}
+} */

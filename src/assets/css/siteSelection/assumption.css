@@ -1,0 +1,165 @@
+.assumptionsSection .assumptionTitle {
+    font-size:                          23px;
+    font-weight:                        700;
+    margin-top:                         100px;
+    margin-bottom:                      25px;
+}
+
+.assumptionsSection .assumptionSubtitle {
+    font-size:                          16px;
+    font-weight:                        800;
+    margin-top:                         30px;
+    margin-bottom:                      25px;
+}
+
+.assumptionsSection .assumptionSubtitle2 {
+    font-size:                          16px;
+    font-weight:                        700;
+    margin-top:                         30px;
+    margin-bottom:                      10px;
+}
+
+.assumptionsSection .inputTitle {
+    margin-bottom:                      10px;
+}
+
+.assumptionsSection .assumptionRadioSizeTypeContainer {
+    display:                            flex;
+    align-items:                        center;
+    margin-bottom:                      8px;
+}
+
+.assumptionsSection .secondaryButton {
+    padding:                            5px 5px;
+}
+
+.assumptionsSection .secondaryButton:first-of-type:not(.addRole) {
+    margin-left:                        20px;
+}
+
+.assumptionsSection .secondaryButton:last-of-type:not(.addRole) {
+    margin-left:                        10px;
+}
+
+.assumptionsSection .secondaryButton.radioDisabled {
+    background:                         rgba(0, 0, 0, 0.05);
+}
+
+.assumptionsSection .assumptionRequirementsCommentsContainer {
+    display:                            flex;
+    flex-direction:                     column;
+    gap:                                30px;
+}
+
+.assumptionsSection .assumptionCheckboxContainer {
+    display:                            flex;
+    gap:                                10px;
+    align-items:                        center;
+}
+
+.assumptionsSection .assumptionCheckboxContainer > input:not([type="checkbox"]) {
+    visibility:                         hidden;
+    opacity:                            0;
+    transition:                         all 0.3s ease-in-out;
+}
+
+.assumptionsSection .assumptionCheckboxContainer > input:not([type="checkbox"]).active {
+    visibility:                         visible;
+    opacity:                            1;
+}
+
+.assumptionsSection .headcountOptionsContainer .quantity {
+    width:                              89px;
+}
+
+.assumptionsSection .headcountOptionsContainer .inputContainer:nth-of-type(2) {
+    flex-grow:                          1;
+}
+
+.assumptionsSection .headcountOptionsContainer {
+    display:                            flex;
+    gap:                                10px;
+    align-items:                        center;
+    margin-bottom:                      10px;
+}
+
+.assumptionsSection .headcountOptionsContainer .inputContainer {
+    margin-bottom:                      0;
+}
+
+.assumptionsSection .addRole {
+    padding:                            5px 10px;
+    margin-bottom:                      35px;
+}
+
+.assumptionsSection .addRole:last-of-type {
+    margin-bottom:                      55px;
+}
+
+.assumptionsSection .deleteRol, .assumptionsSection .assumptionCheckboxContainer > label,
+.assumptionsSection .assumptionNavigationContainer .menuContainer {
+    cursor:                             pointer;
+}
+
+.assumptionsSection .assumptionNavigationContainer {
+    position:                           fixed;
+    top:                                400px;
+    margin-top:                         100px;
+}
+
+.assumptionsSection .assumptionNavigationContainer .miniDot {
+    width:                              3px;
+    height:                             3px;
+    background-color:                   rgba(0, 0, 0, 0.4);
+    border-radius:                      50%;
+    margin-bottom:                      10px;
+    margin-left:                        6px;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer {
+    display:                            flex;
+    gap:                                25px;
+    align-items:                        center;
+    margin-bottom:                      7px;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer.active {
+    display:                            flex;
+    gap:                                25px;
+    align-items:                        center;
+    margin-bottom:                      4px;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer .dot {
+    width:                              10px;
+    height:                             10px;
+    background-color:                   rgba(0, 0, 0, 0.4);
+    border-radius:                      50%;
+    margin-left:                        3px;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer.active .dot {
+    width:                              15px;
+    height:                             15px;
+    background:                         var(--gradient, linear-gradient(180deg, #009AFF 19.79%, #8CA5FF 100%));
+    border-radius:                      50%;
+    margin-left:                        0;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer .menuTitle {
+    font-size:                          16px;
+    font-weight:                        400;
+    color:                              rgba(0, 0, 0, 0.4);
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer.active > .menuTitle {
+    font-size:                          23px;
+    font-weight:                        700;
+    color:                              #000000;
+}
+
+.assumptionsSection .assumptionNavigationContainer .menuContainer.active > .menuTitle {
+    font-size:                          23px;
+    font-weight:                        700;
+    color:                              #000000;
+}

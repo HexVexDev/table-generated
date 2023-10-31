@@ -1,0 +1,188 @@
+.containerSection {
+    position:                           absolute;
+    top:                                100vh;
+    bottom:                             0;
+    left:                               0;
+    right:                              0;
+    z-index:                            999;
+    border-radius:                      35px 35px 0 0;
+    background:                         var(--grey);
+    box-shadow:                         0 -50px 60px 0 rgba(7, 27, 57, 0.20);
+    overflow-y:                         auto;
+    visibility:                         hidden;
+    opacity:                            0;
+    transition:                         all 0.3s ease-in-out;
+}
+
+.containerSection.opened {
+    visibility:                         visible;
+    opacity:                            1;
+    top:                                100px;
+    bottom:                             unset;
+    padding:                            110px 0;
+     min-height:                        calc(100vh - 100px);
+}
+
+.containerSection .containerMinimizeClose {
+    display:                            flex;
+    position:                           absolute;
+    top:                                30px;
+    right:                              30px;
+    gap:                                30px;
+}
+
+.containerSection .containerMinimizeClose > img {
+    width:                              14px;
+    height:                             14px;
+    object-fit:                         contain;
+    object-position:                    center center;
+    cursor:                             pointer;
+}
+
+.containerSection .containerWizardNavigation {
+    display:                            flex;
+    position:                           fixed;
+    bottom:                             45px;
+    left:                               0;
+    right:                              0;
+    margin:                             0 auto;
+    width:                              fit-content;
+    background-color:                   #FFFFFF;
+    box-shadow:                         0 4px 30px 0 rgba(7, 27, 57, 0.05);
+}
+
+.containerSection .containerWizardNavigation .btnNavigation {
+    padding:                            10px 30px;
+    opacity:                            0.4;
+    border:                             unset;
+    background-color:                   white;
+}
+
+.containerSection .containerWizardNavigation .btnNavigation:not(:disabled) {
+    opacity:                            0.8;
+}
+
+.containerSection .containerWizardNavigation .btnNavigation.active {
+    background-color:                   var(--darkBlue);
+    color:                              #FFFFFF;
+    opacity:                            1;
+}
+
+.containerSection .secondaryButton {
+    display:                            inline-flex;
+    background:                         var(--blue);
+    padding:                            10px 10px;
+    border:                             unset;
+    gap:                                5px;
+    align-items:                        center;
+}
+
+.containerSection .secondaryButton > span {
+    font-weight:                        400;
+    background:                         var(--gradient);
+    background-clip:                    text;
+    -webkit-background-clip:            text;
+    -webkit-text-fill-color:            transparent;
+}
+
+.containerSection .secondaryButton:hover {
+    background-color:                   var(--darkBlue);
+}
+
+.containerSection .secondaryButton > span:hover {
+    background:                         var(--gradient);
+    background-clip:                    text;
+    -webkit-background-clip:            text;
+    -webkit-text-fill-color:            transparent;
+}
+
+.containerSection .wizardStatusContainer {
+    margin-right:                       40px;
+    margin-bottom:                      30px;
+}
+
+.containerSection .wizardStatus {
+    color:                              rgba(0, 0, 0, 0.5);
+    text-align:                         right;
+    font-size:                          10px;
+    font-weight:                        400;
+    margin-top:                         -9px;
+}
+
+.containerSection .containerActions {
+    display:                            flex;
+    justify-content:                    end;
+    gap:                                10px;
+    align-items:                        center;
+}
+
+.containerSection .containerActions .cancelButton {
+    padding:                            10px 50px;
+    justify-content:                    center;
+    align-items:                        center;
+    border:                             unset;
+    background:                         transparent;
+}
+
+.containerSection .containerActions .secondaryButton {
+    padding:                            10px 50px;
+    justify-content:                    center;
+    align-items:                        center;
+    margin-left:                        unset;
+}
+
+.containerSection .containerActions .secondaryButton:disabled {
+    background:                         rgba(0, 0, 0, 0.05);
+}
+
+.containerSection .containerActions .secondaryButton:disabled > span {
+    background:                         rgba(0, 0, 0, 0.40);
+    background-clip:                    text;
+    -webkit-background-clip:            text;
+    -webkit-text-fill-color:            transparent;
+}
+
+.containerSection .sectionDescription {
+    font-weight:                        400;
+    opacity:                            0.5;
+}
+
+.containerSection .containerDraftName {
+    width:                              310px;
+    align-items:                        center;
+    gap:                                150px;
+    position:                           relative;
+}
+
+.containerSection .containerDraftName > input {
+    padding:                            10px 40px 10px 20px;
+}
+
+.containerSection .containerDraftName > img {
+    width:                              20px;
+    height:                             20px;
+    object-fit:                         contain;
+    object-position:                    center center;
+    position:                           absolute;
+    top:                                0;
+    bottom:                             0;
+    right:                              15px;
+    margin:                             auto 0;
+}
+
+.containerSection .savingDraftContainer {
+    margin-left:                        10px;
+}
+
+.containerSection .loading {
+    width:                              30px;
+    height:                             30px;
+    visibility:                         hidden;
+    opacity:                            0;
+    transition:                         all 0.3s ease-in-out;
+}
+
+.containerSection .loading.show {
+    visibility:                         visible;
+    opacity:                            1;
+}

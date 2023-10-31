@@ -1,0 +1,599 @@
+/* Report Log CSS */
+
+.containerSectionReport {
+	position:                       	    absolute;
+	bottom:                          		0;
+	left:                            		0;
+	right:                            	 	0;
+	height:                           	 	0;
+	z-index:                          	 	999;
+	border-radius:                    	 	35px 35px 0 0;
+	background:                       	 	var(--grey);
+	box-shadow:                       	 	0 -50px 60px 0 rgba(7, 27, 57, 0.20);
+	overflow-y:                       	 	auto;
+	visibility:                       	 	hidden;
+	opacity:                          	 	0;
+	padding:                           	 	110px 0;
+}
+
+.containerSectionReport.opened {
+	visibility:                       	 	visible;
+	opacity:                          	  	1;
+}
+
+.containerSectionReport .containerMinimizeClose {
+	display:                          	  	flex;
+	position:                         		absolute;
+	top:                              		30px;
+	right:                           	 	30px;
+	gap:                             		30px;
+}
+
+.containerSectionReport .containerMinimizeClose > img {
+	width:                              	14px;
+	height:                             	auto;
+	object-fit:                         	contain;
+	object-position:                    	center center;
+	cursor:                             	pointer;
+}
+
+.containerSectionReport .container .editClientsHeader {
+	margin: 								10px 0;
+}
+
+.containerSectionReport .container .containerHeader {
+	display:                            	flex;
+  	justify-content:                    	space-between;
+  	padding-left:                       	100px;
+	margin-top: 							57px;
+	margin-bottom: 							57px;
+}
+
+.containerSectionReport .container .containerHeader .reportLogTitle {
+	width:                              	490px;
+  	height:                             	125px;
+}
+
+.containerSectionReport .container .containerHeader .searchContainer{
+	position: 								relative;
+	width: 									fit-content;
+	margin: 								0 0 95px auto;
+}
+
+.containerSectionReport .container .containerHeader .searchContainer::after{
+	content: 								"";
+	display: 								block;
+	width: 									25px;
+	height: 								25px;
+	background: 							url("../../images/search.svg") center center no-repeat;
+	background-size: 						25px;
+	position: 								absolute;
+	top: 									0;
+	bottom: 								0;
+	right: 									25px;
+	margin:  								auto 0;
+	cursor: 								pointer;
+}
+
+.containerSectionReport .container .containerHeader .searchContainer .search{
+	width: 									272px;
+	padding-right: 							65px;
+}
+
+.tableSection {
+	display: 								flex;
+	flex-direction: 						column;
+	gap: 									30px;
+}
+
+/* CSS for filters */
+
+.tableSection .filtersContainer {
+  	display:                           		flex;
+  	justify-content:                   		space-between;
+	width: 									100%;
+}
+
+.tableSection .filtersContainer .filtersTypeContainer {
+	display:                          		flex;
+	gap:                              	  	10px;
+}
+
+.tableSection .itemsPerPageFilter,
+.tableSection .clientFilter,
+.tableSection .typeFilter,
+.tableSection .dateFilter {
+	position: 								relative;
+	display: 								flex;
+	flex-direction: 						row;
+	background: 							#FFFFFF;
+	padding: 								6px 5px 6px 15px;
+	cursor: 								pointer;
+}
+
+.tableSection .itemsPerPageFilter > span,
+.tableSection .clientFilter > span,
+.tableSection .typeFilter > span,
+.tableSection .dateFilter > span {
+	margin-right: 							10px;
+	margin-left: 							5px;
+}
+
+.tableSection .clientFilter.apply,
+.tableSection .typeFilter.apply,
+.tableSection .dateFilter.apply {
+	background: 							var(--gradient), var(--darkBlue);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+	transition: 							all 0.3s ease-in-out;
+}
+
+.tableSection .itemsPerPageFilter.active,
+.tableSection .clientFilter.active,
+.tableSection .typeFilter.active,
+.tableSection .dateFilter.active {
+	background: 							var(--gradient), var(--blue);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+}
+
+.tableSection .filtersContainer .filtersTypeContainer > button {
+	padding: 								0 15px;
+	background: 							transparent;
+	border: 								#FFFFFF;
+	text-decoration: 						none;
+	visibility: 							hidden;
+}
+
+.tableSection .filtersContainer .filtersTypeContainer > button.show {
+	visibility: 							visible;
+}
+
+.tableSection .optionContainer {
+	display: 								flex;
+	flex-direction: 						row;
+	gap: 									10px;
+	align-items: 							center;
+	height: 								50px;
+}
+
+/* client filter CSS */
+
+.tableSection .clientFilter .filterOptions{
+	position: 								absolute;
+	left: 									0;
+	right: 									0;
+	top: 									160%;
+	width: 									285%;;
+	background-color: 						#FFFFFF;
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+}
+
+.tableSection .clientFilter .filterOptions::after{
+	content: 								"";
+	display: 								block;
+	width: 									0;
+	height: 								0;
+	border-right: 							15px solid transparent;
+	border-left: 							15px solid transparent;
+	border-bottom: 							15px solid #FFFFFF;
+	position: 								absolute;
+	right: 									0;
+	left: 									15%;
+	bottom: 								100%;
+	margin: 								auto 0;
+}
+
+.tableSection .clientFilter .filterOptions.show{
+	visibility: 							visible;
+    opacity: 								1;
+}
+
+.tableSection .clientFilter .filterOptions .clients{
+	display: 								flex;
+	flex-direction: 						column;
+    max-height: 							340px;
+    overflow-y: 							auto;
+	background: 							#FFFFFF;
+}
+
+.tableSection .clientFilter .filterOptions .clients > h5 {
+	-webkit-text-fill-color: 				black;
+	padding: 								23px 20px 15px 20px;
+	font-weight: 							700;
+}
+
+.tableSection .clientFilter .filterOptions .clients::-webkit-scrollbar{
+	width:	 								3px;
+}
+
+.tableSection .clientFilter .filterOptions .clients::-webkit-scrollbar-track{
+    background: 							rgba(0, 0, 0, 0.05);
+}
+
+.tableSection .clientFilter .filterOptions .clients::-webkit-scrollbar-thumb{
+	background: 							var(--darkBlue);
+}
+
+.tableSection .clientFilter .searchContainerFilter{
+	position: 								relative;
+	padding: 								10px 20px;
+}
+
+.tableSection .clientFilter .searchContainerFilter::after{
+	content: 								"";
+	display: 								block;
+	width: 									25px;
+	height: 								25px;
+	background: 							url("../../images/search.svg") center center no-repeat;
+	background-size: 						25px;
+	position: 								absolute;
+	top: 									0;
+	bottom: 								0;
+	right: 									25px;
+	margin:  								auto 0;
+	cursor: 								pointer;
+	opacity: 								0.4;
+}
+
+.tableSection .clientFilter .searchContainerFilter .searchFilter{
+	background: 							rgba(4,26,57, 0.03);
+	-webkit-text-fill-color: 				black;
+	width: 									100%;
+	height: 								100%;
+}
+
+.tableSection .clientFilter .filterOptions .clients .report{
+    position: 								relative;
+    display: 								flex;
+    flex-flow: 								row nowrap;
+    padding: 								20px 35px 20px 30px;
+    border-bottom: 							1px solid rgba(0, 0, 0, 0.05);
+    cursor: 								pointer;
+    transition: 							all 0.3s ease-in-out;
+	gap: 									10px;
+}
+
+.tableSection .clientFilter .filterOptions .clients .report::before{
+    content: 								"";
+    display: 								block;
+    width: 									1px;
+    height: 								0;
+    background: 							var(--gradient) center center no-repeat;
+    position: 								absolute;
+    top: 									0;
+    left: 									0;
+    transition: 							all 0.3s ease-in-out;
+}
+
+.tableSection .clientFilter .filterOptions .clients .report:hover{
+    background-color: 						rgba(4, 26, 57, 0.03);
+}
+
+.tableSection .clientFilter .filterOptions .clients .report:hover::before{
+    height: 								100%;
+}
+
+.tableSection .clientFilter .filterOptions .clients .report .client {
+	-webkit-text-fill-color:				 black;
+	width: 									100%;
+}
+
+.tableSection .clientFilter .filterOptions .viewAll{
+    display: 								flex;
+	background: 							#FFFFFF;
+    flex-flow: 								row nowrap;
+    justify-content: 						center;
+    gap: 									5px;
+    padding: 								20px 0;
+}
+
+.tableSection .clientFilter .filterOptions .viewAll > span{
+    font-size: 								15px;
+    background: 							var(--gradient);
+    background-clip: 						text;
+    -webkit-background-clip: 				text;
+    -webkit-text-fill-color: 				transparent;
+    cursor: 								pointer;
+}
+
+/* type filter CSS */
+
+.tableSection .typeFilter .filterOptions {
+	background: 				 			rgba(255, 255, 255, 0.90);
+	box-shadow: 							0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 								absolute;
+	padding: 								20px 35px;
+	width: 									160%;
+	top: 									160%;
+	right:									-33%;
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+	max-height: 							0;
+}
+
+.tableSection .typeFilter .filterOptions::after{
+	content: 								"";
+	display: 								block;
+	width: 									0;
+	height: 								0;
+	border-right: 							15px solid transparent;
+	border-left: 							15px solid transparent;
+	border-bottom: 							15px solid #FFFFFF;
+	position: 								absolute;
+	right: 									0;
+	left: 									43%;
+	bottom: 								100%;
+	margin: 								auto 0;
+}
+
+
+.tableSection .typeFilter .filterOptions.show {
+	visibility: 							visible;
+	opacity: 								1;
+	max-height: 							1000px;
+}
+
+.tableSection .typeFilter .filterOptions > h5, 
+.tableSection .typeFilter .filterOptions > button {
+	-webkit-text-fill-color: 				black;
+	cursor: 								default;
+}
+
+.tableSection .filterOptions .option{
+	font-size: 								14px;
+	padding: 								10px 0px;
+	cursor: 								pointer;
+	-webkit-text-fill-color: 				black;
+}
+
+.tableSection .filterOptions .btnFilter {
+	display: 								flex;
+	flex-direction: 						row;
+	height: 								auto;
+	padding: 								16px 0;
+	gap: 									10px;
+	justify-content: 						center;
+}
+
+.tableSection .filterOptions .btnFilter > button {
+	padding: 								0 15px;
+	background: 							transparent;
+	border: 								#FFFFFF;
+	text-decoration: 						none;
+}
+
+.tableSection .filterOptions .btnFilter > button:last-of-type {
+	background: 							var(--gradient), var(--darkBlue);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+	transition: 							all 0.3s ease-in-out;
+}
+
+.tableSection .filterOptions .btnFilter > button:disabled {
+	background: 							rgba(0, 0, 0, 0.05);
+	opacity: 								0.5;
+	-webkit-text-fill-color: 				black;
+}
+
+/* date Filter CSS */
+
+.tableSection .dateFilter .filterOptions {
+	background: 							rgba(255, 255, 255, 0.90);
+	box-shadow: 							0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 								absolute;
+	padding: 								20px 35px;
+	width: 									378%;
+	top: 									160%;
+	left: 									50%;
+	transform: 								translateX(-50%);
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+	max-height: 							0;
+}
+
+.tableSection .dateFilter .filterOptions::after{
+	content: 								"";
+	display: 								block;
+	width: 									0;
+	height: 								0;
+	border-right: 							15px solid transparent;
+	border-left: 							15px solid transparent;
+	border-bottom: 							15px solid #FFFFFF;
+	position: 								absolute;
+	right: 									0;
+	left: 									45%;
+	bottom: 								100%;
+	margin: 								auto 0;
+}	
+
+.tableSection .dateFilter .filterOptions.show {
+	visibility: 							visible;
+	opacity: 								1;
+	max-height: 							1000px;
+}
+
+.tableSection .dateFilter .filterOptions > h5, 
+.tableSection .dateFilter .filterOptions > button {
+	-webkit-text-fill-color: 				black;
+	cursor: 								default;
+}
+
+.tableSection .dateFilter .filterOptions .optionContainer > input {
+	background: 							rgba(0, 0, 0, 0.03);
+	padding: 								6px 15px;
+}
+
+.tableSection .dateFilter.active {
+	background: 							var(--gradient), var(--blue);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				black;
+}
+
+.tableSection .itemsPerPageFilter .filterOptions {
+	background: 							rgba(255, 255, 255, 0.90);
+	box-shadow: 							0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 								absolute;
+	width: 									100%;
+	top: 									120%;
+	right:									0;
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+	max-height: 							0;
+	overflow: 								hidden;
+}
+
+.tableSection .itemsPerPageFilter .filterOptions.show {
+	visibility: 							visible;
+	opacity: 								1;
+	max-height: 							1000px;
+}
+
+.tableSection .itemsPerPageFilter .filterOptions .option {
+	padding: 								10px 35px;
+	cursor: 								pointer;
+	-webkit-text-fill-color: 				black;
+}
+
+.tableSection .itemsPerPageFilter .filterOptions .option:hover {
+	background: 							var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+}
+
+
+/* CSS for reports table */
+
+ .tableSection .tableReport {
+	width: 									100%;
+}
+
+ .tableSection .tableReport thead {
+	background: 							#FFFFFF;
+	box-shadow: 							0px 5px 30px 0px rgba(35, 107, 216, 0.08);
+}
+
+.tableSection .tableReport .sort {
+	display: 								inline;
+	width: 									25px;
+	height: 								25px;
+	object-fit: 							contain;
+	object-position: 						center center;
+	cursor: 								pointer;
+	margin-left: 							5px;
+	transition: 							all 0.3s ease-in-out;
+}
+
+.tableSection .tableReport .sort.DSC {
+	transform: 								rotate(180deg);
+}
+
+ .tableSection .tableReport thead th,
+ .tableSection .tableReport tbody td {
+	position: 								relative;
+	padding: 								20px;
+}
+
+ .tableSection .tableReport tbody tr {
+	border-bottom: 							1px solid rgba(0, 0, 0, 0.05);
+}
+
+ .tableSection .tableReport .pending {
+ color: 									var(--orange);
+}
+
+ .tableSection .tableReport .pending::after {
+	content: 								"\025cf";
+	width: 									20px;
+	height: 								20px;
+	margin-left: 							5px;
+	color: 									var(--orange);
+}
+
+ .tableSection .tableReport .finish {
+ color: 									var(--green);
+}
+
+ .tableSection .tableReport .finish::after {
+	content: 								"\02714";
+	width: 									20px;
+	height: 								20px;
+	margin-left: 							5px;
+	color: 									var(--green);
+}
+
+.tableSection .tableReport .dateAndMore {
+	position: 								relative;
+	display: 								flex;
+	flex-flow: 								row nowrap;
+	justify-content: 						space-between;
+}
+
+.tableSection .tableReport .dateAndMore > span {
+	opacity: 								0.6;
+}
+
+.tableSection .tableReport .dateAndMore > img {
+	width: 									25px;
+	height: 								25px;
+	object-fit: 							contain;
+	object-position: 						center center;
+	cursor: 								pointer;
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport {
+	background: 							rgba(255, 255, 255, 0.90);
+	box-shadow: 							0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 								absolute;
+	right: 									-35px;
+	top: 									75%;
+	z-index: 								999;
+	visibility: 							hidden;
+	opacity: 								0;
+	transition: 							all 0.3s ease-in-out;
+	max-height: 							0;
+	overflow: 								hidden;
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport.show {
+	visibility: 							visible;
+	opacity: 								1;
+	max-height: 							1000px;
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport .option {
+	padding: 								10px 35px;
+	cursor: 								pointer;
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport .option:hover {
+	background: 							var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 						text, padding-box;
+	-webkit-background-clip: 				text, padding-box;
+	-webkit-text-fill-color: 				transparent;
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport .option:last-of-type {
+	color: 									var(--red);
+}
+
+.tableSection .tableReport .dateAndMore .moreOptionsReport .option:last-of-type:hover {
+	background: 							rgba(4, 26, 57, 0.10);
+	background-clip: 						padding-box;
+	-webkit-background-clip: 				padding-box;
+	-webkit-text-fill-color: 				var(--red);
+}

@@ -1,0 +1,193 @@
+.clientSection .containerNavigation {
+    display:                            inline flex;
+    gap:                                10px;
+}
+
+.clientSection .containerNavigationMark {
+    margin-top:                         20px;
+    margin-bottom:                      28px;
+    width:                              363px;
+    height:                             3px;
+    flex-shrink:                        0;
+    border-radius:                      10px;
+    background:                         rgba(0, 0, 0, 0.03);
+}
+
+.clientSection .containerNavigationMark .selectedMark {
+    position:                           relative;
+    left:                               0;
+    width:                              164px;
+    height:                             3px;
+    flex-shrink:                        0;
+    border-radius:                      10px;
+    background:                         var(--gradient, linear-gradient(180deg, #009AFF 19.79%, #8CA5FF 100%));
+    transition:                         all 0.3s ease-in-out;
+}
+
+.clientSection .containerNavigationMark .selectedMark.move {
+    left:                               174px;
+    width:                              189px;
+}
+
+.clientSection .btnNavigation {
+    background-color:                   white;
+    display:                            inline-flex;
+    padding:                            15px 30px;
+    align-items:                        center;
+    gap:                                5px;
+    border:                             unset;
+    transition:                         all 0.3s ease-in-out;
+}
+
+.clientSection .btnNavigation.active {
+    background-color:                   var(--darkBlue);
+    color:                              #FFFFFF;
+    opacity:                            1;
+    font-weight:                        400;
+}
+
+/*Existing client*/
+
+.existingClientSection .searchContainer {
+    position: 							relative;
+    width: 								fit-content;
+    margin-bottom:                      30px;
+}
+
+.existingClientSection .searchContainer::after{
+    content: 							"";
+    display: 							block;
+    width: 								25px;
+    height: 							25px;
+    background: 						url("../../images/search.svg") center center no-repeat;
+    background-size: 					25px;
+    position: 							absolute;
+    top: 								0;
+    bottom: 							0;
+    right: 								25px;
+    margin:  							auto 0;
+    cursor: 							pointer;
+}
+
+.existingClientSection .searchContainer .search{
+    width: 								400px;
+    padding-right: 						65px;
+}
+
+.existingClientSection .searchContainer .searchClients{
+    position: 							absolute;
+    left: 								0;
+    right: 								0;
+    top: 								105%;
+    background-color: 					#FFFFFF;
+    z-index: 							999;
+    visibility: 						hidden;
+    opacity: 							0;
+    transition: 						all 0.3s ease-in-out;
+}
+
+.existingClientSection .searchContainer .searchClients.show{
+    visibility: 						visible;
+    opacity: 							1;
+}
+
+.existingClientSection .searchContainer .searchClients .clients{
+    max-height: 						340px;
+    overflow-y: 						auto;
+}
+
+.existingClientSection .searchContainer .searchClients .clients::-webkit-scrollbar{
+    width: 								3px;
+}
+
+.existingClientSection .searchContainer .searchClients .clients::-webkit-scrollbar-track{
+    background: 						rgba(0, 0, 0, 0.05);
+}
+
+.existingClientSection .searchContainer .searchClients .clients::-webkit-scrollbar-thumb{
+    background: 						var(--darkBlue);
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client{
+    position: 							relative;
+    display: 							flex;
+    flex-flow: 							row wrap;
+    padding: 							20px 35px 20px 30px;
+    border-bottom: 						1px solid rgba(0, 0, 0, 0.05);
+    cursor: 							pointer;
+    transition: 						all 0.3s ease-in-out;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client::before{
+    content: 							"";
+    display: 							block;
+    width: 								1px;
+    height: 							0;
+    background: 						var(--gradient) center center no-repeat;
+    position: 							absolute;
+    top: 								0;
+    left: 								0;
+    transition: 						all 0.3s ease-in-out;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client:hover{
+    background-color: 					rgba(4, 26, 57, 0.03);
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client:hover::before{
+    height: 							100%;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client .companyName{
+    display: 							inline-block;
+    font-weight: 						700;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client .contactName{
+    display: 							inline-block;
+    opacity: 							0.5;
+    flex: 								1 0 0;
+    text-align: 						end;
+    transition: 						all 0.3s ease-in-out;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client:hover .contactName{
+    opacity: 							1;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client:hover .contactName::first-letter{
+    font-weight: 						700;
+}
+
+.existingClientSection .searchContainer .searchClients .clients .client .mail{
+    width: 								fit-content;
+    font-size: 							12px;
+    opacity: 							0.3;
+    margin-left: 						auto;
+    flex: 								0 0 100%;
+    text-align: 						end;
+}
+
+.existingClientSection .searchContainer .searchClients .viewAll{
+    display: 							flex;
+    flex-flow: 							row nowrap;
+    justify-content: 					center;
+    gap: 								5px;
+    padding: 							20px 0;
+}
+
+.existingClientSection .searchContainer .searchClients .viewAll > img{
+    width: 								25px;
+    height: 							25px;
+    object-fit:  						contain;
+    object-position: 					center center;
+}
+
+.existingClientSection .searchContainer .searchClients .viewAll > span{
+    font-size: 							15px;
+    background: 						var(--gradient);
+    background-clip: 					text;
+    -webkit-background-clip: 			text;
+    -webkit-text-fill-color: 			transparent;
+    cursor: 							pointer;
+}

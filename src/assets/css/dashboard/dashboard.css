@@ -1,0 +1,555 @@
+.dashboard{
+	min-height: 						100vh;
+	position: 							relative;
+	padding-top: 						20px;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .searchContainer{
+	position: 							relative;
+	width: 								fit-content;
+	margin: 							0 50px 95px auto;
+}
+
+.dashboard .searchContainer::after{
+	content: 							"";
+	display: 							block;
+	width: 								25px;
+	height: 							25px;
+	background: 						url("../../images/search.svg") center center no-repeat;
+	background-size: 					25px;
+	position: 							absolute;
+	top: 								0;
+	bottom: 							0;
+	right: 								25px;
+	margin:  							auto 0;
+	cursor: 							pointer;
+}
+
+.dashboard .searchContainer .search{
+	width: 								400px;
+	padding-right: 						65px;
+}
+
+.dashboard .searchContainer .searchClients{
+	position: 							absolute;
+	left: 								0;
+	right: 								0;
+	top: 								105%;
+	background-color: 					#FFFFFF;
+	z-index: 							999;
+	visibility: 						hidden;
+	opacity: 							0;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .searchContainer .searchClients.show{
+	visibility: 						visible;
+	opacity: 							1;
+}
+
+.dashboard .searchContainer .searchClients .clients{
+	max-height: 						340px;
+	overflow-y: 						auto;
+}
+
+.dashboard .searchContainer .searchClients .clients::-webkit-scrollbar{
+	width: 								3px;
+}
+
+.dashboard .searchContainer .searchClients .clients::-webkit-scrollbar-track{
+	background: 						rgba(0, 0, 0, 0.05);
+}
+
+.dashboard .searchContainer .searchClients .clients::-webkit-scrollbar-thumb{
+	background: 						var(--darkBlue);
+}
+
+.dashboard .searchContainer .searchClients .clients .client{
+	position: 							relative;
+	display: 							flex;
+	flex-flow: 							row wrap;
+	padding: 							20px 35px 20px 30px;
+	border-bottom: 						1px solid rgba(0, 0, 0, 0.05);
+	cursor: 							pointer;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .searchContainer .searchClients .clients .client::before{
+	content: 							"";
+	display: 							block;
+	width: 								1px;
+	height: 							0;
+	background: 						var(--gradient) center center no-repeat;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .searchContainer .searchClients .clients .client:hover{
+	background-color: 					rgba(4, 26, 57, 0.03);
+}
+
+.dashboard .searchContainer .searchClients .clients .client:hover::before{
+	height: 							100%;
+}
+
+.dashboard .searchContainer .searchClients .clients .client .company{
+	display: 							inline-block;
+	font-weight: 						700;
+}
+
+.dashboard .searchContainer .searchClients .clients .client .name{
+	display: 							inline-block;
+	opacity: 							0.5;
+	flex: 								1 0 0;
+	text-align: 						end;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .searchContainer .searchClients .clients .client:hover .name{
+	opacity: 							1;
+}
+
+.dashboard .searchContainer .searchClients .clients .client:hover .name::first-letter{
+	font-weight: 						700;
+}
+
+.dashboard .searchContainer .searchClients .clients .client .email{
+	width: 								fit-content;
+	font-size: 							12px;
+	opacity: 							0.3;
+	margin-left: 						auto;
+	flex: 								0 0 100%;
+	text-align: 						end;
+}
+
+
+
+.dashboard .searchContainer .searchClients .viewAll{
+	display: 							flex;
+	flex-flow: 							row nowrap;
+	justify-content: 					center;
+	gap: 								5px;
+	padding: 							20px 0;
+}
+
+.dashboard .searchContainer .searchClients .viewAll > img{
+	width: 								25px;
+	height: 							25px;
+	object-fit:  						contain;
+	object-position: 					center center;
+}
+
+.dashboard .searchContainer .searchClients .viewAll > span{
+	font-size: 							15px;
+	background: 						var(--gradient);
+	background-clip: 					text;
+	-webkit-background-clip: 			text;
+	-webkit-text-fill-color: 			transparent;
+	cursor: 							pointer;
+}
+
+.dashboard .animatedContainer{
+	animation: 							animateDashboard 1s forwards 2s;
+}
+
+.dashboard .welcome{
+	margin-bottom: 						70px;
+}
+
+.dashboard .recent{
+	margin-bottom: 						25px;
+	font-weight: 						700;
+}
+
+.dashboard  .tableReport{
+	width: 								100%;
+}
+
+.dashboard  .tableReport thead{
+	background: 						#FFFFFF;
+	box-shadow: 						0px 5px 30px 0px rgba(35, 107, 216, 0.08);
+}
+
+.dashboard .tableReport .sort{
+	display: 							inline;
+	width: 								25px;
+	height: 							25px;
+	object-fit: 						contain;
+	object-position: 					center center;
+	cursor: 							pointer;
+	margin-left: 						5px;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .tableReport .sort.DSC{
+	transform: 							rotate(180deg);
+}
+
+.dashboard  .tableReport thead th,
+.dashboard  .tableReport tbody td{
+	position: 							relative;
+	padding: 							20px;
+}
+
+.dashboard  .tableReport tbody tr{
+	border-bottom: 						1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dashboard  .tableReport .pending{
+ color: 								var(--orange);
+}
+
+.dashboard  .tableReport .pending::after{
+	content: 							"\025cf";
+	width: 								20px;
+	height: 							20px;
+	margin-left: 						5px;
+	color: 								var(--orange);
+}
+
+.dashboard  .tableReport .finish{
+ color: 								var(--green);
+}
+
+.dashboard  .tableReport .finish::after{
+	content: 							"\02714";
+	width: 								20px;
+	height: 							20px;
+	margin-left: 						5px;
+	color: 								var(--green);
+}
+
+.dashboard .tableReport .dateAndMore{
+	position: 							relative;
+	display: 							flex;
+	flex-flow: 							row nowrap;
+	justify-content: 					space-between;
+}
+
+.dashboard .tableReport .dateAndMore > span{
+	opacity: 							0.6;
+}
+
+.dashboard .tableReport .dateAndMore > img{
+	width: 								25px;
+	height: 							25px;
+	object-fit: 						contain;
+	object-position: 					center center;
+	cursor: 							pointer;
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions{
+	background: 						rgba(255, 255, 255, 0.90);
+	box-shadow: 						0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	position: 							absolute;
+	top: 								75%;
+	right: 								-50%;
+	transform: 							translateX(-50%);
+	z-index: 							999;
+	visibility: 						hidden;
+	opacity: 							0;
+	transition: 						all 0.3s ease-in-out;
+	max-height: 						0;
+	overflow: 							hidden;
+}
+
+.dashboard .tableReport tbody tr:last-of-type .dateAndMore .moreOptions{
+	top: 								unset;
+	bottom: 							75%;
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions.show{
+	visibility: 						visible;
+	opacity: 							1;
+	max-height: 						1000px;
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions .option{
+	padding: 							10px 35px;
+	cursor: 							pointer;
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions .option:hover{
+	background: 						var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 					text, padding-box;
+	-webkit-background-clip: 			text, padding-box;
+	-webkit-text-fill-color: 			transparent;
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions .option:last-of-type{
+	color: 								var(--red);
+}
+
+.dashboard .tableReport .dateAndMore .moreOptions .option:last-of-type:hover{
+	background: 						rgba(4, 26, 57, 0.10);
+	background-clip: 					padding-box;
+	-webkit-background-clip: 			padding-box;
+	-webkit-text-fill-color: 			var(--red);
+}
+
+.dashboard .pinButtonContainer{
+	position: 							absolute;
+	bottom: 							70px;
+	right: 								30px;
+}
+
+.dashboard .pinButtonContainer .pinButton{
+	position: 							relative;
+	width: 								35px;
+	height: 							35px;
+	border: 							unset;
+	border-radius: 						100px;
+	background: 						var(--gradient) no-repeat center center;
+	box-shadow: 						15px 15px 30px 0px rgba(35, 107, 216, 0.25);
+}
+
+.dashboard .pinButtonContainer .pinButton.active{
+	background: 						var(--darkBlue) no-repeat center center;
+}
+
+.dashboard .pinButtonContainer .pinButton::before{
+	content: 							"Show Reports";
+	width: 								max-content;
+	height: 							max-content;
+	display: 							block;
+	color: 								rgba(0, 0, 0, 0.5);
+	background-color: 					#FFFFFF;
+	padding: 							10px 30px;
+	position: 							absolute;
+	top: 								0;
+	bottom: 							0;
+	right: 								130%;
+	margin: 							auto 0;
+	visibility: 						hidden;
+	opacity: 							0;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .pinButtonContainer .pinButton.active::before{
+	content: 							"Hide Reports";
+}
+
+.dashboard .pinButtonContainer .pinButton:hover::before{
+	visibility: 						visible;
+	opacity: 							1;
+}
+
+.dashboard .pinButtonContainer .pinButton::after{
+	content: 							"<>";
+	display: 							block;
+	color: 								#FFFFFF;
+	transform: 							rotate(90deg);
+}
+
+.dashboard .pinButtonContainer .pinButton.active::after{
+	content: 							"><";
+	background: 						var(--gradient) center center no-repeat;
+	background-clip: 					text;
+	-webkit-background-clip: 			text;
+	-webkit-text-fill-color: 			transparent;
+}
+
+.dashboard .pinButtonContainer .pinnedReports{
+	display: 							flex;
+	flex-flow: 							column nowrap;
+	gap: 								20px;
+	position: 							absolute;
+	left: 								0;
+	right: 								0;
+	bottom: 							100%;
+	margin: 							0 auto;
+	visibility: 						hidden;
+	opacity: 							0;
+	transition: 						all 0.3s ease-in-out;
+}
+
+.dashboard .pinButtonContainer .pinnedReports.show{
+	bottom: 							160%;
+	visibility: 						visible;
+	opacity: 							1;
+}
+
+.dashboard .pinButtonContainer .pinnedReports .reportPin{
+	position: 							relative;
+	border: 							unset;
+	border-radius: 						100px;
+	width: 								100%;
+	aspect-ratio: 						1;
+	background: 						var(--gradient) center center no-repeat;
+	color: 								#FFFFFF;
+}
+
+.dashboard .pinButtonContainer .pinnedReports .reportPin .reportName{
+	width: 								max-content;
+	height: 							max-content;
+	padding: 							10px;
+	position: 							absolute;
+	top: 								0;
+	bottom: 							0;
+	right: 								160%;
+	margin: 							auto 0;
+	background-color: 					#FFFFFF;
+	color: 								rgba(0, 0, 0, 0.5);
+	filter: 							drop-shadow(0px 15px 50px rgba(4, 26, 57, 0.05));
+	transition: 						all 0.3s ease-in-out;
+	visibility: 						hidden;
+	opacity: 							0;
+}
+
+.dashboard .pinButtonContainer .pinnedReports .reportPin .reportName::after{
+	content: 							"";
+	display: 							block;
+	width: 								0;
+	height: 							0;
+	border-top: 						15px solid transparent;
+	border-bottom: 						15px solid transparent;
+	border-left: 						15px solid #FFFFFF;
+	position: 							absolute;
+	top: 								0;
+	bottom: 							0;
+	left: 								100%;
+	margin: 							auto 0;
+}
+
+.dashboard .pinButtonContainer .pinnedReports .reportPin:hover .reportName{
+	visibility: 						visible;
+	opacity: 							1;
+}
+
+
+.dashboard .privacy{
+	font-size: 							12px;
+	font-weight: 						400;
+	opacity: 							0.4;
+	cursor: 							pointer;
+	position: 							fixed;
+	right: 								30px;
+	bottom: 							20px;
+	z-index: 							9999;
+}
+
+.dashboard .privacy:hover{
+	opacity: 							1;
+}
+
+.dashboard .animationContainer{
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	right: 								0;
+	bottom: 							0;
+	z-index: 							999;
+}
+
+.dashboard .animationContainer.show{
+	animation: 							animatedContainerReverse 0.5s forwards 2s;
+}
+
+.dashboard .animationContainer .columnAnimation{
+	width: 								25%;
+	height: 							100%;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	background-color: 					#041A39;
+}
+
+.dashboard .animationContainer .columnAnimation:nth-of-type(2){
+	left: 								25%;
+}
+
+.dashboard .animationContainer .columnAnimation:nth-of-type(3){
+	left: 								50%;
+}
+
+.dashboard .animationContainer .columnAnimation:nth-of-type(4){
+	left: 								75%;
+}
+
+.dashboard .animationContainer .columnAnimation.animate{
+	animation: 							animatedWidthReverse 0.5s forwards 2s;
+}
+
+.dashboard .animationContainer .title{
+	width: 								fit-content;
+	height: 							fit-content;
+	color: 								#00A3FF;
+	font-size:							48px;
+	position: 							absolute;
+	top: 								0;
+	left: 								0;
+	right: 								0;
+	bottom: 							0;
+	margin: 							auto;
+	max-height: 						0;
+	overflow: 							hidden;
+}
+
+.dashboard .animationContainer .title::after{
+	content: 							"Teresa";
+	display: 							inline-block;
+	max-width: 							0;
+	color: 								#FFFFFF;
+	font-size: 							48px;
+}
+
+.dashboard .animationContainer .title.animate{
+	animation: 							animatedHeight 3s forwards 0.5s;
+}
+
+.dashboard .animationContainer .title.animate::after{
+	animation: 							animatedTitleAfter 3s forwards 1s;
+	margin-left: 						10px;
+}
+
+@keyframes animatedContainerReverse {
+	0%{
+		visibility: 					visible;
+		opacity: 						1;
+	}
+	100%{
+		visibility: 					hidden;
+		opacity: 						0;
+	}
+}
+
+@keyframes animatedWidthReverse {
+	0%{
+		width: 							25%;
+	}
+	100%{
+		width: 							0%;
+	}
+}
+
+@keyframes animatedHeight {
+	0%{
+		max-height: 					0;
+	}
+	100%{
+		max-height: 					1000px;
+	}
+}
+
+@keyframes animatedTitleAfter {
+	0%{
+		max-width: 						0;
+	}
+	100%{
+		max-width: 						1000px;
+	}
+}
+
+@keyframes animateDashboard{
+	0%{
+		opacity: 						0;
+		transform: 						translateX(200px);
+	}
+	100%{
+		opacity: 						1;
+		transform: 						translateX(0px);
+	}
+}

@@ -1,0 +1,178 @@
+/* Navigation Menu */
+.navigation{
+	width: 							315px;
+	height: 						100%;
+	background-color: 				#FFFFFF;
+	box-shadow:						15px 15px 100px 0px rgba(4, 26, 57, 0.10);
+	position: 						absolute;
+	top: 							0;
+	left: 							0;
+	bottom: 						0;
+	z-index: 						999;
+	animation: 						animateNavigation 1s forwards 2s;
+	transition: 					all 0.3s ease-in-out;
+}
+
+.navigation .logo{
+	width: 							130px;
+	object-fit: 					contain;
+	object-position: 				center center;
+	margin: 						30px 0 140px 30px;
+}
+
+.navigation .profile{
+	width: 							130px;
+	height: 						130px;
+	object-fit: 					cover;
+	object-position: 				center center;
+	border-radius: 					100px;
+	border: 						5px solid transparent;
+	background: 					var(--gradient) no-repeat center center;
+	background-size: 				130px 130px;
+	background-clip: 				border-box;
+	margin: 						0 auto 15px;
+}
+
+.navigation .userContainer{
+	position: 						relative;
+	margin: 						0 auto 70px;
+}
+
+.navigation .userContainer > .userTitle{
+	width: 							fit-content;
+	display: 						flex;
+	align-items: 					center;
+	cursor: 						pointer;
+	transition: 					all 0.3s ease-in-out;
+	margin: 						0 auto;
+}
+
+.navigation .userContainer > .userTitle.active{
+	background: 					var(--gradient);
+	background-clip: 				text;
+	-webkit-background-clip: 		text;
+	-webkit-text-fill-color: 		transparent;
+}
+
+.navigation .userContainer > .userTitle::after{
+	content: 						"";
+	width: 							20px;
+	height: 						20px;
+	background: 					url("../../images/arrowDown.svg")  center center no-repeat;
+	background-size: 				20px;
+	transition: 					all 0.3s ease-in-out;
+}
+
+.navigation .userContainer > .userTitle.active::after{
+	transform: 						rotate(180deg);
+}
+
+.navigation .userContainer .userOptions{
+	width: 							fit-content;
+	position: 						absolute;
+	top: 							100%;
+	left: 							0;
+	right: 							0;
+	margin: 						0 auto;
+	background: 					rgba(255, 255, 255, 0.90);
+	box-shadow: 					0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	transition: 					all 0.3s ease-in-out;
+	visibility: 					hidden;
+	opacity: 						0;
+	z-index: 						9;
+}
+
+.navigation .userContainer .userOptions.active{
+	visibility: 					visible;
+	opacity: 						1;
+}
+
+.navigation .userContainer .userOptions > .userChoice,
+.navigation .menuOption .subOptions > .subOptionTitle{
+	padding: 						10px 35px;
+	cursor: 						pointer;
+}
+
+.navigation .userContainer .userOptions > .userChoice:hover,
+.navigation .menuOption .subOptions > .subOptionTitle:hover{
+	background: 					var(--gradient), rgba(4, 26, 57, 0.10);
+	background-clip: 				text, padding-box;
+	-webkit-background-clip: 		text, padding-box;
+	-webkit-text-fill-color: 		transparent;
+}
+
+.navigation .menuOption{
+	position: 						relative;
+	width: 							100%;
+	border: 						unset;
+	background-color: 				transparent;
+	padding: 						25px 55px;
+	transition: 					all 0.3s ease-in-out;
+	text-align: 					start;
+	display: 						flex;
+	flex-flow: 						column nowrap;
+	gap: 							5px;
+	cursor: 						pointer;
+	transition: 					all 0.3s ease-in-out;
+}
+
+.navigation .menuOption.active{
+	width: 							105%;
+	background-color: 				var(--darkBlue);
+}
+
+.navigation .menuOption .iconOption{
+	width: 							25px;
+	height: 						25px;
+	object-fit: 					contain;
+	object-position: 				center center;
+	pointer-events: 				none;
+}
+
+.navigation .menuOption .titleOption{
+	font-weight: 					500;
+	transition: 					all 0.3s ease-in-out;
+	pointer-events: 				none;
+}
+
+.navigation .menuOption .descriptionOption{
+	font-size: 						14px;
+	opacity: 						0.6;
+	pointer-events: 				none;
+}
+
+.navigation .menuOption.active .titleOption{
+	background: 					var(--gradient);
+	background-clip: 				text;
+	-webkit-background-clip: 		text;
+	-webkit-text-fill-color: 		transparent;
+}
+
+.navigation .menuOption .subOptions{
+	width: 							max-content;
+	position: 						absolute;
+	top: 							0;
+	left: 							100%;
+	background: 					rgba(255, 255, 255, 0.90);
+	box-shadow: 					0px 15px 50px 0px rgba(4, 26, 57, 0.15);
+	visibility: 					hidden;
+	opacity: 						0;
+	transition: 					all 0.3s ease-in-out;
+	z-index: 						9;
+}
+
+.navigation .menuOption .subOptions.active{
+	visibility: 					visible;
+	opacity: 						1;
+}
+
+@keyframes animateNavigation{
+	0%{
+		left: 						-315px;
+		opacity: 					0;
+	}
+	100%{
+		left: 						0;
+		opacity: 					1;
+	}
+}

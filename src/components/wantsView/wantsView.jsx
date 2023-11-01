@@ -7,6 +7,7 @@ import arrowforward from "../../assets/images/arrow_forward.svg";
 import { Accordion, Container } from "react-bootstrap";
 
 const WantsView = () => {
+const [activeItems,setActiveItems] = useState([]);
 
     const toggleTooltip = (event) => {
         const tooltip = event.target.nextElementSibling; // Get the next sibling element
@@ -15,6 +16,42 @@ const WantsView = () => {
     const report = {
         criteria: {
             criteria1: {
+                subcriteria: {
+                    subcriteria1: {
+                        subcriteria_name: "Total payroll cost",
+                        info: {},
+                        criteria: {},
+                        points: 4,
+                        weight: 20,
+                        city_score: {
+                            city1: 2,
+                            city2: 3,
+                            city3: 2
+                        }
+                    },
+                    subcriteria2: {
+                        subcriteria_name: "example 2",
+                        info: {},
+                        criteria: {},
+                        points: 3,
+                        weight: 10,
+                        city_score: {
+                            city1: 3,
+                            city2: 4,
+                            city3: 5
+                        }
+                    }
+                },
+                total_points: 20,
+                total_weight: 20,
+                criteria_name: "Operation costs",
+                total_city_score: {
+                    city1: 17.7,
+                    city2: 11.5,
+                    city3: 12.3
+                }
+            },
+            criteria2: {
                 subcriteria: {
                     subcriteria1: {
                         subcriteria_name: "Total payroll cost",
@@ -58,14 +95,42 @@ const WantsView = () => {
         }
     }
 
+    const toggleItem =(item_id)=>{
+        const newItem = { id: item_id };
+        // Check if the newItem is already in activeItems
+        const isItemInArray = activeItems.some(item => item.id === newItem.id);
+        if (!isItemInArray) {
+        // Append newItem to activeItems array
+        const updatedactiveItems = [...activeItems, newItem];
+        setActiveItems(updatedactiveItems);
+        }else{
+            const updatedactiveItems = activeItems.filter(item => item.id !== newItem.id);
+        // Set the state to update activeItems
+        setActiveItems(updatedactiveItems);
+        }
+
+    }
+
+    const openAllItems = () =>{
+        let idCounter = 0; // Start with 1 or any initial value you prefer
+          const updatedActiveItems = Object.keys(report.criteria).map(() => ({
+            id: idCounter++,
+          }));
+          setActiveItems([...activeItems, ...updatedActiveItems]);
+          console.log(activeItems);
+    }
+
+    const closeAllItems = () =>{
+        setActiveItems([]);
+    }
     return (
         <section className="wants-view">
             <Container>
                 <div className="header-section">
                     <div className="criterion-wrapper">
                         <span>Criterion</span>
-                        <button>Open all</button>
-                        <button>Close all</button>
+                        <button onClick={openAllItems}>Open all</button>
+                        <button onClick={closeAllItems}>Close all</button>
                     </div>
                     <button className="btn-header">Points</button>
                     <button className="btn-header">Weight</button>
@@ -73,10 +138,10 @@ const WantsView = () => {
                         <button className="btn-header" key={cityKey}>{report.cityNames[cityKey]}</button>
                     ))}
                 </div>
-                <Accordion defaultActiveKey="0">
+                <Accordion activeKey={activeItems.map(item => item.id)}>
                     {Object.keys(report.criteria).map((key,index)=>(
-                        <Accordion.Item eventKey="0" index={index}> 
-                        <Accordion.Header>
+                        <Accordion.Item eventKey={index} index={index}> 
+                        <Accordion.Header onClick={()=>toggleItem(index)}>
                             <h5 className="button-title">{report.criteria[key].criteria_name}</h5>
                             <h5 className="points-weight">{report.criteria[key].total_points}</h5>
                             <h5 className="points-weight">{report.criteria[key].total_weight}%</h5>
